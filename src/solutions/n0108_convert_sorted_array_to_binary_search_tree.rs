@@ -28,7 +28,6 @@
 pub struct Solution {}
 use crate::models::tree::{TreeNode, to_tree};
 
-#[allow(dead_code)]
 // Definition for a binary tree node.
 // #[derive(Debug, PartialEq, Eq)]
 // pub struct TreeNode {
@@ -49,9 +48,19 @@ use crate::models::tree::{TreeNode, to_tree};
 // }
 use std::rc::Rc;
 use std::cell::RefCell;
+#[allow(dead_code)]
 impl Solution {
     pub fn sorted_array_to_bst(nums: Vec<i32>) -> Option<Rc<RefCell<TreeNode>>> {
-        
+        fn bst(nums: &[i32]) -> Option<Rc<RefCell<TreeNode>>> {
+            if nums.is_empty() { return None }
+            Some(Rc::new(RefCell::new(TreeNode{
+                val: nums[nums.len() / 2],
+                left: bst(&nums[0..(nums.len()/2)]),
+                right: bst(&nums[(nums.len()/2+1)..]),
+            })))
+        }
+
+        bst(&nums[..])
     }
 }
 
@@ -60,5 +69,8 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_108() {}
+    fn test_108() {
+        assert_eq!(Solution::sorted_array_to_bst(vec![-10,-3,0,5,9]), tree![0,-3,9,-10,null,5]);
+        assert_eq!(Solution::sorted_array_to_bst(vec![]), tree![]);
+    }
 }
