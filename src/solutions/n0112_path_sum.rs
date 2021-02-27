@@ -30,7 +30,6 @@
 pub struct Solution {}
 use crate::models::tree::{TreeNode, to_tree};
 
-#[allow(dead_code)]
 // Definition for a binary tree node.
 // #[derive(Debug, PartialEq, Eq)]
 // pub struct TreeNode {
@@ -52,6 +51,7 @@ use crate::models::tree::{TreeNode, to_tree};
 use std::rc::Rc;
 use std::cell::RefCell;
 
+#[allow(dead_code)]
 impl Solution {
     pub fn has_path_sum(root: Option<Rc<RefCell<TreeNode>>>, target_sum: i32) -> bool {
         return match root {
