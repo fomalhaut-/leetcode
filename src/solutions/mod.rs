@@ -15,3 +15,4 @@ mod n0171_excel_sheet_column_number;
 mod n0203_remove_linked_list_elements;
 mod n0205_isomorphic_strings;
 mod n0206_reverse_linked_list;
+mod n0217_contains_duplicate;
