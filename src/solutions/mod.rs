@@ -10,3 +10,4 @@ mod n0112_path_sum;
 mod n0168_excel_sheet_column_title;
 mod n0169_majority_element;
 mod n0171_excel_sheet_column_number;
+mod n0004_median_of_two_sorted_arrays;
