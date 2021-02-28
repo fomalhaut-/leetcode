@@ -1,5 +1,6 @@
 mod n0001_two_sum;
 mod n0002_add_two_numbers;
+mod n0003_longest_substring_without_repeating_characters;
 mod n0007_reverse_integer;
 mod n0104_maximum_depth_of_binary_tree;
 mod n0108_convert_sorted_array_to_binary_search_tree;
