@@ -10,6 +10,7 @@ mod n0011_container_with_most_water;
 mod n0019_remove_nth_node_from_end_of_list;
 mod n0023_merge_k_sorted_lists;
 mod n0024_swap_nodes_in_pairs;
+mod n0033_search_in_rotated_sorted_array;
 mod n0104_maximum_depth_of_binary_tree;
 mod n0108_convert_sorted_array_to_binary_search_tree;
 mod n0110_balanced_binary_tree;
