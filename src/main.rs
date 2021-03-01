@@ -57,12 +57,13 @@ fn main() {
         }
 
         let template = fs::read_to_string("./template.rs").unwrap();
+        let default_code = parse_default_code(&code.default_code);
         let source = template
             .replace("__PROBLEM_TITLE__", &problem.title)
             .replace("__PROBLEM_DESC__", &build_desc(&problem.content))
-            .replace("__PROBLEM_DEFAULT_CODE__", &code.default_code)
+            .replace("__PROBLEM_DEFAULT_CODE__", &default_code)
             .replace("__PROBLEM_ID__", &format!("{}", id))
-            .replace("__EXTRA_USE__", &parse_extra_use(&code.default_code));
+            .replace("__EXTRA_USE__", &parse_extra_use(&default_code));
 
         let mut file = fs::OpenOptions::new()
             .write(true)
@@ -115,17 +116,21 @@ fn get_solved_ids() -> Vec<u32> {
     solved_ids
 }
 
+fn parse_default_code(code:&str) -> String{
+    return code.replace("impl Solution", "#[allow(dead_code)]\nimpl Solution");
+}
+
 fn parse_extra_use(code: &str) -> String {
     let mut extra_use_line = String::new();
     // a linked-list problem
     if code.contains("pub struct ListNode") {
-        extra_use_line.push_str("\nuse crate::models::linked_list::{ListNode, to_list};")
+        extra_use_line.push_str("\n#[allow(unused_imports)]\nuse crate::models::linked_list::{ListNode, to_list};")
     }
     if code.contains("pub struct TreeNode") {
-        extra_use_line.push_str("\nuse crate::models::tree::{TreeNode, to_tree};")
+        extra_use_line.push_str("\n#[allow(unused_imports)]\nuse crate::models::tree::{TreeNode, to_tree};")
     }
     if code.contains("pub struct Point") {
-        extra_use_line.push_str("\nuse crate::models::point::Point;")
+        extra_use_line.push_str("\n#[allow(unused_imports)]\nuse crate::models::point::Point;")
     }
     extra_use_line
 }

@@ -26,6 +26,7 @@
  * 
  */
 pub struct Solution {}
+#[allow(unused_imports)]
 use crate::models::tree::{TreeNode, to_tree};
 
 // Definition for a binary tree node.

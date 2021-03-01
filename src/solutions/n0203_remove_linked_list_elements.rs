@@ -12,6 +12,7 @@
  * 
  */
 pub struct Solution {}
+#[allow(unused_imports)]
 use crate::models::linked_list::{ListNode, to_list};
 
 // Definition for singly-linked list.

@@ -5,7 +5,6 @@
  */
 pub struct Solution {}__EXTRA_USE__
 
-#[allow(dead_code)]
 __PROBLEM_DEFAULT_CODE__
 
 #[cfg(test)]
