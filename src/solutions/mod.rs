@@ -25,3 +25,4 @@ mod n0205_isomorphic_strings;
 mod n0206_reverse_linked_list;
 mod n0217_contains_duplicate;
 mod n0225_implement_stack_using_queues;
+mod n0226_invert_binary_tree;
