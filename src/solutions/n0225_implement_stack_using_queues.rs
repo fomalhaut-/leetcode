@@ -1,5 +1,3 @@
-use std::ops::Deref;
-
 /**
  * [225] Implement Stack using Queues
  *
@@ -42,8 +40,6 @@ use std::ops::Deref;
  *  
  * Follow-up: Can you implement the stack such that each operation is <a href="https://en.wikipedia.org/wiki/Amortized_analysis" target="_blank">amortized</a> O(1) time complexity? In other words, performing n operations will take overall O(n) time even if one of those operations may take longer. You can use more than two queues.
  */
-pub struct Solution {}
-
 struct MyStack {
     q: std::collections::VecDeque<i32>,
 }
@@ -53,6 +49,7 @@ struct MyStack {
  * `&self` means the method takes an immutable reference.
  * If you need a mutable reference, change it to `&mut self` instead.
  */
+#[allow(unused)]
 impl MyStack {
 
     /** Initialize your data structure here. */
