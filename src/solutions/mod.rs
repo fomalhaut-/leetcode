@@ -27,3 +27,4 @@ mod n0217_contains_duplicate;
 mod n0225_implement_stack_using_queues;
 mod n0226_invert_binary_tree;
 mod n0228_summary_ranges;
+mod n0231_power_of_two;
