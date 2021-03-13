@@ -1,5 +1,3 @@
-use std::borrow::Borrow;
-
 /**
  * [232] Implement Queue using Stacks
  *
@@ -41,7 +39,6 @@ use std::borrow::Borrow;
  * 	All the calls to pop and peek are valid.
  * 
  */
-pub struct Solution {}
 
 struct MyQueue {
     stack_pop : Vec<i32>,
@@ -53,6 +50,7 @@ struct MyQueue {
  * `&self` means the method takes an immutable reference.
  * If you need a mutable reference, change it to `&mut self` instead.
  */
+#[allow(dead_code)]
 impl MyQueue {
     /** Initialize your data structure here. */
     fn new() -> Self {
